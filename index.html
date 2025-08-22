@@ -1,23 +1,52 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ManuTech - Sistema de Manutenção</title>
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#3498db">
-    <script>
-      if ("serviceWorker" in navigator) {
-        window.addEventListener("load", () => {
-          navigator.serviceWorker.register("service-worker.js")
-            .then(reg => console.log("Service Worker registrado!", reg))
-            .catch(err => console.error("Erro ao registrar Service Worker:", err));
-        });
-      }
-    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ManuTech - Sistema de Manutenção</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
 </head>
 <body>
-    <h1>ManuTech - Sistema de Manutenção</h1>
-    <p>App PWA de manutenção pronto para teste!</p>
+  <!-- Cabeçalho -->
+  <header class="app-header">
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <h1>ManuTech</h1>
+  </header>
+
+  <!-- Menu lateral -->
+  <nav id="sidebar" class="sidebar">
+    <ul>
+      <li><a href="#">📊 Dashboard</a></li>
+      <li><a href="#">🛠️ Ordens de Serviço</a></li>
+      <li><a href="#">⚙️ Equipamentos</a></li>
+      <li><a href="#">📑 Relatórios</a></li>
+    </ul>
+  </nav>
+
+  <!-- Conteúdo principal -->
+  <main class="content">
+    <h2>Bem-vindo ao sistema!</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Ordens em aberto</h3>
+        <p>12</p>
+      </div>
+      <div class="card">
+        <h3>Manutenções hoje</h3>
+        <p>4</p>
+      </div>
+      <div class="card">
+        <h3>Equipamentos cadastrados</h3>
+        <p>58</p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("sidebar").classList.toggle("active");
+    }
+  </script>
 </body>
 </html>
